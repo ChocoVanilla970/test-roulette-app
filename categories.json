@@ -1,6 +1,10 @@
 [
     {
         "name": "選曲オプション",
+        "color": {
+          "borderColor": "#9C5700",
+          "backgroundColor": "#282828"
+        },
         "options": [
             { "name": "曲の決め方", "choices": ["☆12ランセレ", "☆11ランセレ", "☆10ランセレ"] },
             { "name": "クリアランク", "choices": ["Full Combo", "AAA", "AA以上", "A以上"] }
@@ -8,6 +12,10 @@
     },
     {
         "name": "ゲームオプション",
+        "color": {
+          "borderColor": "#00579C",
+          "backgroundColor": "#182028"
+        },
         "options": [
             { "name": "譜面の配置", "choices": ["OFF", "RANDOM", "R-RANDOM", "S-RANDOM", "MIRROR"] },
             { "name": "グルーブゲージ<br>減り幅", "choices": ["OFF", "HARD", "EXHARD"] },
@@ -16,6 +24,10 @@
     },
     {
         "name": "詳細オプション",
+        "color": {
+          "borderColor": "#659C57",
+          "backgroundColor": "#182820"
+        },
         "options": [
             { "name": "オートスクラッチ<br>表示", "choices": ["ON", "OFF"] },
             { "name": "グルーブゲージ<br>表示", "choices": ["TYPE A", "TYPE B", "TYPE C"] },
@@ -30,6 +42,10 @@
     },
     {
         "name": "エフェクターオプション",
+        "color": {
+          "borderColor": "#9C5765",
+          "backgroundColor": "#281820"
+        },
         "options": [
             {
                 "name": "EFFECTOR",

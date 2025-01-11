@@ -1,3 +1,10 @@
+// 設定ファイルを非同期で読み込む関数
+async function loadConfig() {
+  const response = await fetch('config.json');
+  const config = await response.json();
+  return config;
+}
+
 // カテゴリーデータファイルから読み込む関数
 async function loadCategoriesData() {
   const response = await fetch('categories.json');
@@ -5,8 +12,51 @@ async function loadCategoriesData() {
   return categoriesData;
 }
 
+// スタイルを適用する関数（config.json からのスタイル設定は削除）
+function applyConfig(config) {
+  // オプション名のスタイルを設定
+  const optionNameStyle = `
+      background-color: ${config.option.cellColor};
+      border-color: ${config.option.borderColor};
+      font-size: ${config.option.font.size};
+      font-family: ${config.option.font.family};
+      font-weight: ${config.option.font.weight};
+  `;
+
+  // 未選択時の選択肢のスタイルを設定（デフォルト）
+  const choiceUnselectedStyle = `
+      background-color: ${config.choices.unselected.cellColor};
+      color: ${config.choices.unselected.font.color};
+      font-size: ${config.choices.unselected.font.size};
+      font-family: ${config.choices.unselected.font.family};
+  `;
+
+  // 選択時の選択肢のスタイルを設定（デフォルト）
+  const choiceSelectedStyle = `
+      background-color: ${config.choices.selected.cellColor};
+      color: ${config.choices.selected.font.color};
+      font-size: ${config.choices.selected.font.size};
+      font-family: ${config.choices.selected.font.family};
+  `;
+
+  // 選択肢全体の外枠のスタイル
+  const choicesBorderStyle = `
+      border: ${config.choices.border.width} solid ${config.choices.border.color};
+  `;
+
+  // スタイルを適用
+  const style = document.createElement('style');
+  style.innerHTML = `
+      .option-name { ${optionNameStyle} }
+      .option-choices { ${choicesBorderStyle} }
+      .option-choices div { ${choiceUnselectedStyle} }
+      .option-choices div.selected { ${choiceSelectedStyle} }
+  `;
+  document.head.appendChild(style);
+}
+
 // HTMLを動的に生成する関数
-async function createRouletteElements(categoriesData) {
+async function createRouletteElements(categoriesData, config) {
   const categoriesContainer = document.getElementById('categories-container');
   categoriesContainer.innerHTML = ''; // コンテナをクリア
 
@@ -17,6 +67,12 @@ async function createRouletteElements(categoriesData) {
     // カテゴリー要素を作成
     const categoryDiv = document.createElement('div');
     categoryDiv.classList.add('category');
+
+    // カテゴリーデータにスタイル設定があれば適用
+    if (categoryData.color) {
+        categoryDiv.style.borderColor = categoryData.color.borderColor;
+        categoryDiv.style.backgroundColor = categoryData.color.backgroundColor;
+    }
 
     // ルーレット開始ボタンを作成
     const startButton = document.createElement('button');
@@ -184,7 +240,7 @@ function stopRoulette(intervalId, optionChoices, categoryName, optionName) {
 /**
  * ボタンの表示/非表示を切り替える関数
  * @param {HTMLElement} startButton - 押された開始
-* @param {boolean} stop - ボタンの状態（true: 停止, false: 開始）
+ * @param {boolean} stop - ボタンの状態（true: 停止, false: 開始）
  */
 function toggleButtons(startButton, stop) {
   // すべてのボタンを取得
@@ -340,14 +396,10 @@ compactViewButton.addEventListener('click', () => {
 
 // ページ読み込み時の処理
 window.addEventListener('DOMContentLoaded', async () => {
+  const config = await loadConfig();
   const categoriesData = await loadCategoriesData();
-  createRouletteElements(categoriesData);
+
+  applyConfig(config);
+  createRouletteElements(categoriesData, config);
   setCategory();
 });
-
-// 設定ファイルを読み込む関数（現状使用していないが、将来的に使う可能性があるので残しておく）
-async function loadConfig() {
-  const response = await fetch('config.json');
-  const config = await response.json();
-  return config;
-}
