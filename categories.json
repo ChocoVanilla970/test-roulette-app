@@ -2,8 +2,8 @@
     {
         "name": "選曲オプション",
         "color": {
-          "borderColor": "#9C5700",
-          "backgroundColor": "#282828"
+          "borderColor": "#548235",
+          "backgroundColor": "#E2EFDA"
         },
         "options": [
             { "name": "曲の決め方", "choices": ["☆12ランセレ", "☆11ランセレ", "☆10ランセレ"] },
@@ -13,8 +13,8 @@
     {
         "name": "ゲームオプション",
         "color": {
-          "borderColor": "#00579C",
-          "backgroundColor": "#182028"
+          "borderColor": "#C65911",
+          "backgroundColor": "#FCE4D6"
         },
         "options": [
             { "name": "譜面の配置", "choices": ["OFF", "RANDOM", "R-RANDOM", "S-RANDOM", "MIRROR"] },
@@ -25,8 +25,8 @@
     {
         "name": "詳細オプション",
         "color": {
-          "borderColor": "#659C57",
-          "backgroundColor": "#182820"
+          "borderColor": "#4472C4",
+          "backgroundColor": "#DDEBF7"
         },
         "options": [
             { "name": "オートスクラッチ<br>表示", "choices": ["ON", "OFF"] },
@@ -43,8 +43,8 @@
     {
         "name": "エフェクターオプション",
         "color": {
-          "borderColor": "#9C5765",
-          "backgroundColor": "#281820"
+          "borderColor": "#7030A0",
+          "backgroundColor": "#E1CCF0"
         },
         "options": [
             {
