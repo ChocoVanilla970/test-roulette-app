@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-start; /* 全体を左寄せにする */
+}
+
+/* カテゴリー全体のスタイル */
+.category {
+    margin-bottom: 40px;
+    border: 2px solid #9C5700; /* カテゴリー枠の境界線を追加 */
+    padding: 10px;
+    background-color: #282828; /* カテゴリー枠の背景色を追加 */
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* オプションコンテナのスタイル */
+.option-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* オプション列のスタイル */
+.option-column {
+    text-align: center;
+    margin: 0 5px; /* 左右に少し余白を追加 */
+}
+
+/* オプション名のスタイル */
+.option-name {
+    padding: 10px;
+    border: 1px solid #FFFFFF; /* 境界線を追加 */
+    margin-bottom: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: #404040; /* オプション名の背景色 */
+    color: #FFFFFF; /* オプション名のフォント色 */
+    font-size: 16px; /* オプション名のフォントサイズ */
+    font-family: sans-serif; /* オプション名のフォントファミリー */
+}
+
+/* 選択肢のスタイル */
+.option-choices {
+    border: 1px solid #FFFFFF; /* 外枠の境界線 */
+}
+
+.option-choices div {
+    padding: 5px;
+    border: none; /* 境界線を削除 */
+    margin-bottom: 2px;
+    background-color: #404040; /* 未選択時の背景色 */
+    color: #FFFFFF; /* 未選択時のフォント色 */
+    font-size: 14px; /* 未選択時のフォントサイズ */
+    font-family: sans-serif; /* 未選択時のフォントファミリー */
+}
+
+/* 選択時のスタイル */
+.option-choices div.selected {
+    border: none; /* 境界線を削除 */
+    background-color: #FFEB9C; /* 選択時の背景色 */
+    color: #9C5700; /* 選択時のフォント色 */
+    font-size: 14px; /* 選択時のフォントサイズ */
+    font-family: sans-serif; /* 選択時のフォントファミリー */
+}
+
+/* カテゴリーコンテナのスタイル */
+#categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* コンパクト表示ボタン */
+#compact-view-button {
+    margin-left: 10px;
+}

@@ -1,0 +1,137 @@
+[
+    {
+        "name": "選曲オプション",
+        "options": [
+            { "name": "曲の決め方", "choices": ["☆12ランセレ", "☆11ランセレ", "☆10ランセレ"] },
+            { "name": "クリアランク", "choices": ["Full Combo", "AAA", "AA以上", "A以上"] }
+        ]
+    },
+    {
+        "name": "ゲームオプション",
+        "options": [
+            { "name": "譜面の配置", "choices": ["OFF", "RANDOM", "R-RANDOM", "S-RANDOM", "MIRROR"] },
+            { "name": "グルーブゲージ<br>減り幅", "choices": ["OFF", "HARD", "EXHARD"] },
+            { "name": "譜面の表示<br>エリア", "choices": ["OFF", "SUDDEN+", "HIDDEN+", "SUD+ & HID+", "LIFT", "LIFT & HID+"] }
+        ]
+    },
+    {
+        "name": "詳細オプション",
+        "options": [
+            { "name": "オートスクラッチ<br>表示", "choices": ["ON", "OFF"] },
+            { "name": "グルーブゲージ<br>表示", "choices": ["TYPE A", "TYPE B", "TYPE C"] },
+            { "name": "レーンの明るさ<br>調整", "choices": ["1", "0.9", "0.8", "0.7", "0.6", "0.5"] },
+            { "name": "ゴーストスコア<br>表示位置", "choices": ["ON", "TYPE A", "TYPE B", "TYPE C"]},
+            { "name": "判定タイミング<br>表示位置", "choices": ["ON", "TYPE A", "TYPE B", "TYPE C"]},
+            { "name": "判定の数<br>リアルタイム表示", "choices": ["ON", "JUDGE"]},
+            { "name": "判定文字<br>表示位置", "choices": ["通常", "+1", "+2", "+3", "表示なし"]},
+            { "name": "判定タイミング<br>調整", "choices": ["5", "4", "3", "2", "1", "0", "-1", "-2", "-3", "-4", "-5"]},
+            { "name": "MOVIE表示", "choices": ["ON", "OFF"]}
+        ]
+    },
+    {
+        "name": "エフェクターオプション",
+        "options": [
+            {
+                "name": "EFFECTOR",
+                "choices": [
+                    {
+                        "value": "EDHO REVERB",
+                        "unselected": {
+                            "cellColor": "#404040",
+                            "borderColor": "#FFFFFF",
+                            "borderWidth": "1px",
+                            "font": { "color": "#FFFFFF", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#FFEB9C",
+                            "borderColor": "#9C5700",
+                            "borderWidth": "1px",
+                            "font": { "color": "#9C5700", "size": "14px", "family": "sans-serif" }
+                        }
+                    },
+                    {
+                        "value": "COMPRESSOR REVERB EX",
+                        "unselected": {
+                            "cellColor": "#202020",
+                            "borderColor": "#008000",
+                            "borderWidth": "2px",
+                            "font": { "color": "#00FF00", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#CCFFCC",
+                            "borderColor": "#008000",
+                            "borderWidth": "2px",
+                            "font": { "color": "#008000", "size": "14px", "family": "sans-serif" }
+                        }
+                    },
+                    {
+                        "value": "SHORUS FLANGER",
+                        "unselected": {
+                            "cellColor": "#101010",
+                            "borderColor": "#000080",
+                            "borderWidth": "2px",
+                            "font": { "color": "#0000FF", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#CCCCFF",
+                            "borderColor": "#000080",
+                            "borderWidth": "2px",
+                            "font": { "color": "#000080", "size": "14px", "family": "sans-serif" }
+                        }
+                    },
+                    {
+                        "value": "GARGLE DISTORATION",
+                        "unselected": {
+                            "cellColor": "#282828",
+                            "borderColor": "#800000",
+                            "borderWidth": "1px",
+                            "font": { "color": "#FF0000", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#FFCCCC",
+                            "borderColor": "#800000",
+                            "borderWidth": "1px",
+                            "font": { "color": "#800000", "size": "14px", "family": "sans-serif" }
+                        }
+                    },
+                    {
+                        "value": "EQ ONLY",
+                        "unselected": {
+                            "cellColor": "#404040",
+                            "borderColor": "#FFFFFF",
+                            "borderWidth": "1px",
+                            "font": { "color": "#FFFFFF", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#FFEB9C",
+                            "borderColor": "#9C5700",
+                            "borderWidth": "1px",
+                            "font": { "color": "#9C5700", "size": "14px", "family": "sans-serif" }
+                        }
+                    },
+                    {
+                        "value": "OFF",
+                        "unselected": {
+                            "cellColor": "#404040",
+                            "borderColor": "#FFFFFF",
+                            "borderWidth": "1px",
+                            "font": { "color": "#FFFFFF", "size": "14px", "family": "sans-serif" }
+                        },
+                        "selected": {
+                            "cellColor": "#FFEB9C",
+                            "borderColor": "#9C5700",
+                            "borderWidth": "1px",
+                            "font": { "color": "#9C5700", "size": "14px", "family": "sans-serif" }
+                        }
+                    }
+                ]
+            },
+            { "name": "VEFX<br>エフェクトの種類", "choices": ["5", "4", "3", "2", "1"] },
+            { "name": "Low-EQ<br>低音域", "choices": ["5", "4", "3", "2", "1"] },
+            { "name": "Low-Mid-EQ<br>低中音域", "choices": ["5", "4", "3", "2", "1"] },
+            { "name": "Hi-Mid-EQ<br>高中音域", "choices": ["5", "4", "3", "2", "1"] },
+            { "name": "Hi-EQ<br>高音域", "choices": ["5", "4", "3", "2", "1"] },
+            { "name": "Filter<br>フィルター設定", "choices": ["5", "4", "3", "2", "1"] }
+        ]
+    }
+]

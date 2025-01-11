@@ -1,0 +1,37 @@
+{
+  "category": {
+      "borderColor": "#9C5700",
+      "backgroundColor": "#282828"
+  },
+  "option": {
+      "cellColor": "#404040",
+      "borderColor": "#FFFFFF",
+      "font": {
+          "size": "16px",
+          "family": "sans-serif",
+          "weight": "bold"
+      }
+  },
+  "choices": {
+      "border": {
+          "color": "#FFFFFF",
+          "width": "1px"
+      },
+      "unselected": {
+          "cellColor": "#404040",
+          "font": {
+              "color": "#FFFFFF",
+              "size": "14px",
+              "family": "sans-serif"
+          }
+      },
+      "selected": {
+          "cellColor": "#FFEB9C",
+          "font": {
+              "color": "#9C5700",
+              "size": "14px",
+              "family": "sans-serif"
+          }
+      }
+  }
+}
