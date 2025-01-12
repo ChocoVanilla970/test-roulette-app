@@ -54,7 +54,6 @@ function applyConfig(config) {
   `;
   document.head.appendChild(style);
 }
-
 // HTMLを動的に生成する関数
 async function createRouletteElements(categoriesData, config) {
   const categoriesContainer = document.getElementById('categories-container');
@@ -70,8 +69,8 @@ async function createRouletteElements(categoriesData, config) {
 
     // カテゴリーデータにスタイル設定があれば適用
     if (categoryData.color) {
-        categoryDiv.style.borderColor = categoryData.color.borderColor;
-        categoryDiv.style.backgroundColor = categoryData.color.backgroundColor;
+      categoryDiv.style.borderColor = categoryData.color.borderColor;
+      categoryDiv.style.backgroundColor = categoryData.color.backgroundColor;
     }
 
     // ルーレット開始ボタンを作成
@@ -96,6 +95,12 @@ async function createRouletteElements(categoriesData, config) {
       const optionName = document.createElement('div');
       optionName.classList.add('option-name');
       optionName.innerHTML = option.name;
+
+      // オプション名にスタイル設定があれば適用
+      if (option.style) {
+        applyOptionNameStyle(optionName, option.style);
+      }
+
       optionColumn.appendChild(optionName);
 
       const optionChoices = document.createElement('div');
@@ -133,6 +138,33 @@ async function createRouletteElements(categoriesData, config) {
 
     categoryDiv.appendChild(optionContainer);
     categoriesContainer.appendChild(categoryDiv);
+  }
+}
+
+// オプション名のスタイルを適用する関数
+function applyOptionNameStyle(element, styleData) {
+  if (styleData.cellColor) {
+    element.style.backgroundColor = styleData.cellColor;
+  }
+  if (styleData.borderColor) {
+    element.style.borderColor = styleData.borderColor;
+  }
+  if (styleData.borderWidth) {
+    element.style.borderWidth = styleData.borderWidth;
+  }
+  if (styleData.font) {
+    if (styleData.font.color) {
+      element.style.color = styleData.font.color;
+    }
+    if (styleData.font.size) {
+      element.style.fontSize = styleData.font.size;
+    }
+    if (styleData.font.family) {
+      element.style.fontFamily = styleData.font.family;
+    }
+    if (styleData.font.weight) {
+      element.style.fontWeight = styleData.font.weight;
+    }
   }
 }
 
