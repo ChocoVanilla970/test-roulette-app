@@ -208,7 +208,6 @@ const allStartButton = document.getElementById('all-start-button');
 const compactViewButton = document.getElementById('compact-view-button');
 //実行中のルーレットのカウント
 let runningRouletteCount = 0;
-
 /**
  * 指定されたオプションセルのルーレットを開始する関数
  * @param {HTMLElement} optionChoices - ルーレットを行うオプションの選択肢群
@@ -222,27 +221,14 @@ function startRoulette(optionChoices, categoryName, optionName) {
   // 現在のインデックスを初期化
   let currentIndex = 0;
 
-  // 現在選択されているオプションをリセット
-  const selectedOption = optionChoices.querySelector('.selected');
-  if (selectedOption) {
-    selectedOption.classList.remove('selected');
-    // 選択解除時に unselected-style クラスを付与
-    selectedOption.classList.remove('selected-style'); // 選択時のスタイルを削除
-    selectedOption.classList.add('unselected-style'); // 未選択時のスタイルを適用
-  }
-
   // ルーレットのアニメーションを開始（1秒間に15フレーム）
   const intervalId = setInterval(() => {
     // 現在のオプションの選択状態を解除
     options[currentIndex].classList.remove('selected');
-    options[currentIndex].classList.add('unselected-style'); // 未選択時のスタイルを適用
-    options[currentIndex].classList.remove('selected-style'); // 選択時のスタイルを削除
     // ランダムに新しいインデックスを選択
     currentIndex = Math.floor(Math.random() * options.length);
     // 新しいオプションを選択状態にする
     options[currentIndex].classList.add('selected');
-    options[currentIndex].classList.remove('unselected-style'); // 未選択時のスタイルを削除
-    options[currentIndex].classList.add('selected-style'); // 選択時のスタイルを適用
   }, 1000 / 15);
 
   // インターバルIDを返す
@@ -263,15 +249,13 @@ function stopRoulette(intervalId, optionChoices, categoryName, optionName) {
   const selectedOption = optionChoices.querySelector('.selected');
   if (selectedOption) {
     console.log("Selected option:", selectedOption.dataset.value);
-    // 選択解除時に unselected-style クラスを付与
-    selectedOption.classList.remove('unselected-style'); // 未選択時のスタイルを削除
-    selectedOption.classList.add('selected-style'); // 選択時のスタイルを適用
 
     // 選択されたオプションをCookieに保存
     const selectedValue = selectedOption.dataset.value;
     saveOptionChoiceToCookie(categoryName, optionName, selectedValue);
   }
 }
+
 /**
  * ボタンの表示/非表示を切り替える関数
  * @param {HTMLElement} startButton - 押された開始
