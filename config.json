@@ -5,7 +5,7 @@
   },
   "option": {
       "cellColor": "#404040",
-      "borderColor": "#FFFFFF",
+      "borderColor": "#000000",
       "font": {
           "size": "16px",
           "family": "sans-serif",
@@ -14,7 +14,7 @@
   },
   "choices": {
       "border": {
-          "color": "#FFFFFF",
+          "color": "#000000",
           "width": "1px"
       },
       "unselected": {
